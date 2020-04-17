@@ -11,11 +11,14 @@ export const App = () => {
     setItems(values);
   };
 
+  const onError = () => {
+    setItems(null);
+  };
   return (
-    <>
+    <div className="container">
       <h1>Frontend task</h1>
-      <Main onSubmit={onSubmit} />
-      <List type="feeds" items={items} />
-    </>
+      <Main onSubmit={onSubmit} onError={onError} />
+      <List type="feeds" items={items} perPage={3} />
+    </div>
   );
 };

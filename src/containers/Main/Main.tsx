@@ -5,6 +5,7 @@ import { Item } from '../../models/Feed';
 
 interface Props {
   onSubmit: (values: Item[]) => void;
+  onError: () => void;
 }
 
 const validateInput = (value: string) => {
@@ -21,7 +22,7 @@ const validateInput = (value: string) => {
   return null;
 };
 
-const Main = ({ onSubmit }: Props) => {
+const Main = ({ onSubmit, onError }: Props) => {
   const inputRef = React.useRef<HTMLInputElement>(null);
   const [error, setError] = React.useState(validateInput(''));
   const [serverError, setServerError] = React.useState(null);
@@ -42,10 +43,12 @@ const Main = ({ onSubmit }: Props) => {
       res => {
         setLoading(false);
         onSubmit(res.items);
+        setServerError(null);
       },
       err => {
         setLoading(false);
         setServerError(err);
+        onError();
       },
     );
   };

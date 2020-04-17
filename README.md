@@ -1,3 +1,5 @@
+***Please do a fresh install again :)***
+
 # Frontend task
 
 To run this project:
@@ -32,6 +34,19 @@ To run this project:
     }
 
     return newArr;
+  };
+```
+
+### Reduce
+```js
+  Array.prototype.reduce = function reduce(arr, reducer, initialValue) => {
+    let accumulator = !initialValue ? initialValue : 0;
+
+    for (let i = 0; i < arr.length; i++) {
+      accumulator = reducer(accumulator, arr[i], i, arr);
+    }
+
+    return accumulator;
   };
 ```
 

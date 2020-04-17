@@ -5,6 +5,7 @@
   "author": "Remiel Evangelio <rmlevangelio@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "bootstrap": "^4.4.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "rxjs": "^6.5.5"
