@@ -10,11 +10,11 @@ To run this project:
 
 ### Map
 ```js
-  Array.prototype.map = function map(arr, callback) {
+  Array.prototype.map = function map(callback) {
     const newArr = [];
 
-    for (let i = 0; i < arr.length; i++) {
-      newArr.push(callback(arr[i], i, newArr));
+    for (let i = 0; i < this.length; i++) {
+      newArr.push(callback(this[i], i, newArr));
     }
 
     return newArr;
@@ -23,11 +23,11 @@ To run this project:
 
 ### Filter
 ```js
-  Array.prototype.filter = function filter(arr, callback) {
+  Array.prototype.filter = function filter(callback) {
     const newArr = [];
 
-    for (let i = 0; i < arr.length; i++) {
-      const result = callback(arr[i], i, newArr);
+    for (let i = 0; i < this.length; i++) {
+      const result = callback(this[i], i, newArr);
       if (result) {
         newArr.push(result);
       }
@@ -39,11 +39,11 @@ To run this project:
 
 ### Reduce
 ```js
-  Array.prototype.reduce = function reduce(arr, reducer, initialValue) => {
+  Array.prototype.reduce = function reduce(reducer, initialValue) => {
     let accumulator = !initialValue ? initialValue : 0;
 
-    for (let i = 0; i < arr.length; i++) {
-      accumulator = reducer(accumulator, arr[i], i, arr);
+    for (let i = 0; i < this.length; i++) {
+      accumulator = reducer(accumulator, this[i], i, this);
     }
 
     return accumulator;
