@@ -39,7 +39,7 @@ To run this project:
 
 ### Reduce
 ```js
-  Array.prototype.reduce = function reduce(reducer, initialValue) => {
+  Array.prototype.reduce = function reduce(reducer, initialValue) {
     let accumulator = !initialValue ? initialValue : 0;
 
     for (let i = 0; i < this.length; i++) {
