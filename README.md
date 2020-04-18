@@ -40,7 +40,7 @@ To run this project:
 ### Reduce
 ```js
   Array.prototype.reduce = function reduce(reducer, initialValue) {
-    let accumulator = !initialValue ? initialValue : 0;
+    let accumulator = initialValue === undefined || initialValue === null ? 0 : initialValue;
 
     for (let i = 0; i < this.length; i++) {
       accumulator = reducer(accumulator, this[i], i, this);
